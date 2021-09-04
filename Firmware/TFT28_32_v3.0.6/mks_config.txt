@@ -8,7 +8,7 @@
 >cfg_machine_type:1
 
 #baud rate (9600:1; 57600:2; 115200:3; 250000:4)
->cfg_baud_rate:3
+>cfg_baud_rate:4
 
 #multi-language(enable:1, disable:0)
 >cfg_multiple_language:0
