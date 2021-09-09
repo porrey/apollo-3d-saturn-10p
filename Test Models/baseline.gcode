@@ -12,7 +12,6 @@ G28 ; home all axes
 ;G29 ; probe ABL
 ;M420 S1 ; restore ABL mesh 
 ; custom start gcode
-G28 ;Home
 G1 Z15.0 F6000 ;Move the platform down 15mm
 ;Prime the extruder
 M117 Purging extruder...
@@ -30,11 +29,11 @@ G0 Z3; fix for delta printers that home at max
 ;layer 1, Z = 0.200
 T0
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;fan1;
 G1 Z0.200 F1200
 G1 X82.1360 Y83.8140 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X83.8140 Y82.1360 E0.1023 F900 ; custom feedrate
 G1 X106.1860 Y82.1360 E1.0666
@@ -45,11 +44,11 @@ G1 X83.8140 Y107.8640 E3.1999
 G1 X82.1360 Y106.1860 E3.3022
 G1 X82.1360 Y83.8140 E4.2666
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X82.7120 Y84.0520 F3000 ; custom feedrate
 G1 Z0.200 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X84.0520 Y82.7120 E0.0817 F900 ; custom feedrate
 G1 X105.9480 Y82.7120 E1.0255
@@ -60,13 +59,13 @@ G1 X84.0520 Y107.2880 E3.0765
 G1 X82.7120 Y105.9480 E3.1582
 G1 X82.7120 Y84.0520 E4.1020
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X85.2880 Y85.2880 F3000 ; custom feedrate
 G1 X85.2880 Y85.7020
 G1 X86.4400 Y86.4400
 G1 Z0.200 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.5600 Y86.4400 E0.7380 F720 ; custom feedrate
 G1 X103.5600 Y103.5600 E1.4759
@@ -168,12 +167,12 @@ G1 X86.7860 Y102.2630 E21.5665
 G1 X86.7860 Y103.0770 E21.6016
 G1 X86.9230 Y103.2140 E21.6099
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 2, Z = 0.400
 M106 S255; custom fan 100% from layer 2
 G1 Z0.400 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -295,12 +294,12 @@ G1 X102.7800 Y103.5120 E22.8831
 G1 X103.4590 Y103.5120 E22.9075
 G1 X103.5120 Y103.4590 E22.9102
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 3, Z = 0.600
 ;fan3;
 G1 Z0.600 F1200
 G1 X103.8000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y86.2000 E1.2644
@@ -422,12 +421,12 @@ G1 X103.5120 Y87.2200 E22.8831
 G1 X103.5120 Y86.5410 E22.9075
 G1 X103.4590 Y86.4880 E22.9102
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 4, Z = 0.800
 ;fan4;
 G1 Z0.800 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -461,13 +460,13 @@ G1 X94.9670 Y86.5480 E4.9682
 G1 X90.7240 Y86.5480 E5.1587
 G1 X86.5480 Y90.7240 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 5, Z = 1.000
 ;fan5;
 ;
 G1 Z1.000 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -501,12 +500,12 @@ G1 X86.5480 Y95.0330 E4.9682
 G1 X86.5480 Y99.2760 E5.1587
 G1 X90.7240 Y103.4520 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 6, Z = 1.200
 ;fan6;
 G1 Z1.200 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -540,12 +539,12 @@ G1 X95.0330 Y103.4520 E4.9682
 G1 X99.2760 Y103.4520 E5.1587
 G1 X103.4520 Y99.2760 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 7, Z = 1.400
 ;fan7;
 G1 Z1.400 F1200
 G1 X103.8000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y86.2000 E1.2644
@@ -579,12 +578,12 @@ G1 X103.4520 Y94.9670 E4.9682
 G1 X103.4520 Y90.7240 E5.1587
 G1 X99.2760 Y86.5480 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 8, Z = 1.600
 ;fan8;
 G1 Z1.600 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -618,12 +617,12 @@ G1 X94.9670 Y86.5480 E4.9682
 G1 X90.7240 Y86.5480 E5.1587
 G1 X86.5480 Y90.7240 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 9, Z = 1.800
 ;fan9;
 G1 Z1.800 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -657,12 +656,12 @@ G1 X86.5480 Y95.0330 E4.9682
 G1 X86.5480 Y99.2760 E5.1587
 G1 X90.7240 Y103.4520 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 10, Z = 2.000
 ;fan10;
 G1 Z2.000 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -696,12 +695,12 @@ G1 X95.0330 Y103.4520 E4.9682
 G1 X99.2760 Y103.4520 E5.1587
 G1 X103.4520 Y99.2760 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 11, Z = 2.200
 ;fan11;
 G1 Z2.200 F1200
 G1 X103.8000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y86.2000 E1.2644
@@ -735,12 +734,12 @@ G1 X103.4520 Y94.9670 E4.9682
 G1 X103.4520 Y90.7240 E5.1587
 G1 X99.2760 Y86.5480 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 12, Z = 2.400
 ;fan12;
 G1 Z2.400 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -774,12 +773,12 @@ G1 X94.9670 Y86.5480 E4.9682
 G1 X90.7240 Y86.5480 E5.1587
 G1 X86.5480 Y90.7240 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 13, Z = 2.600
 ;fan13;
 G1 Z2.600 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -813,12 +812,12 @@ G1 X86.5480 Y95.0330 E4.9682
 G1 X86.5480 Y99.2760 E5.1587
 G1 X90.7240 Y103.4520 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 14, Z = 2.800
 ;fan14;
 G1 Z2.800 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -852,12 +851,12 @@ G1 X95.0330 Y103.4520 E4.9682
 G1 X99.2760 Y103.4520 E5.1587
 G1 X103.4520 Y99.2760 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 15, Z = 3.000
 ;fan15;
 G1 Z3.000 F1200
 G1 X103.8000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y86.2000 E1.2644
@@ -939,12 +938,12 @@ G1 X86.5480 Y95.0330 E4.7375
 G1 X86.5480 Y99.2760 E4.9280
 G1 X90.7240 Y103.4520 E5.1932
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 16, Z = 3.200
 ;fan16;
 G1 Z3.200 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -1033,12 +1032,12 @@ G1 X93.0750 Y88.4400 E4.6508
 G1 X88.8330 Y88.4400 E4.8413
 G1 X86.5480 Y90.7240 E4.9864
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 17, Z = 3.400
 ;fan17;
 G1 Z3.400 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -1134,12 +1133,12 @@ G1 X86.5480 Y95.0330 E4.6561
 G1 X86.5480 Y99.2760 E4.8466
 G1 X90.7240 Y103.4520 E5.1118
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 18, Z = 3.600
 ;fan18;
 G1 Z3.600 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -1231,12 +1230,12 @@ G1 X88.8370 Y88.4400 E4.8411
 G1 X88.8320 Y88.4400 E4.8413
 G1 X86.5480 Y90.7240 E4.9864
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 19, Z = 3.800
 ;fan19;
 G1 Z3.800 F1200
 G1 X88.8520 Y88.0910 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X92.8660 Y88.0910 E0.1442 F1440 ; custom feedrate
 G1 X92.8650 Y86.2000 E0.2121
@@ -1345,12 +1344,12 @@ G1 X86.5480 Y95.0330 E4.6626
 G1 X86.5480 Y99.2760 E4.8531
 G1 X90.7240 Y103.4520 E5.1183
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 20, Z = 4.000
 ;fan20;
 G1 Z4.000 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X88.9630 Y86.2000 E0.7314
@@ -1427,12 +1426,12 @@ G1 X95.0330 Y103.4520 E4.5307
 G1 X99.2760 Y103.4520 E4.7212
 G1 X103.4520 Y99.2760 E4.9864
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 21, Z = 4.200
 ;fan21;
 G1 Z4.200 F1200
 G1 X103.8000 Y96.7060 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2548 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8870
@@ -1487,13 +1486,13 @@ G1 X102.8150 Y93.5850 E3.0688
 G1 X102.8140 Y95.7460 E3.1464
 G1 X104.7600 Y95.7460 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8140 Y95.7460 F3000 ; custom feedrate
 G1 X102.8150 Y93.9890
 G1 X95.7830 Y87.6370
 G1 Z4.200 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X95.7910 Y87.6450 E0.0004 F1440 ; custom feedrate
 G1 X95.7910 Y86.9660 E0.0247
@@ -1522,12 +1521,12 @@ G1 X86.5480 Y95.0330 E4.6851
 G1 X86.5480 Y99.2760 E4.8756
 G1 X90.7240 Y103.4520 E5.1407
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 22, Z = 4.400
 ;fan22;
 G1 Z4.400 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X89.1850 Y86.2000 E0.7394
@@ -1605,12 +1604,12 @@ G1 X95.0330 Y103.4520 E4.5311
 G1 X99.2760 Y103.4520 E4.7216
 G1 X103.4520 Y99.2760 E4.9868
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 23, Z = 4.600
 ;fan23;
 G1 Z4.600 F1200
 G1 X103.8000 Y96.7020 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2550 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8872
@@ -1665,13 +1664,13 @@ G1 X102.8160 Y93.5800 E3.0688
 G1 X102.8150 Y95.7410 E3.1464
 G1 X104.7600 Y95.7420 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8150 Y95.7410 F3000 ; custom feedrate
 G1 X102.8160 Y93.9820
 G1 X95.5400 Y87.3940
 G1 Z4.600 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X95.5470 Y87.4010 E0.0004 F1440 ; custom feedrate
 G1 X95.5470 Y86.7230 E0.0247
@@ -1702,12 +1701,12 @@ G1 X86.5480 Y95.0330 E4.7067
 G1 X86.5480 Y99.2760 E4.8972
 G1 X90.7240 Y103.4520 E5.1624
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 24, Z = 4.800
 ;fan24;
 G1 Z4.800 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X89.4070 Y86.2000 E0.7474
@@ -1785,12 +1784,12 @@ G1 X95.0330 Y103.4520 E4.5453
 G1 X99.2760 Y103.4520 E4.7358
 G1 X103.4520 Y99.2760 E5.0009
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 25, Z = 5.000
 ;fan25;
 G1 Z5.000 F1200
 G1 X103.8000 Y96.6970 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2551 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8873
@@ -1845,13 +1844,13 @@ G1 X102.8160 Y93.5760 E3.0688
 G1 X102.8160 Y95.7370 E3.1464
 G1 X104.7600 Y95.7380 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8160 Y95.7370 F3000 ; custom feedrate
 G1 X102.8160 Y94.1130
 G1 X95.2960 Y87.8290
 G1 Z5.000 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X95.3030 Y87.8360 E0.0004 F1440 ; custom feedrate
 G1 X95.3030 Y87.1580 E0.0247
@@ -1879,12 +1878,12 @@ G1 X86.5480 Y95.0330 E4.7228
 G1 X86.5480 Y99.2760 E4.9133
 G1 X90.7240 Y103.4520 E5.1784
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 26, Z = 5.200
 ;fan26;
 G1 Z5.200 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X89.6290 Y86.2000 E0.7554
@@ -1962,12 +1961,12 @@ G1 X95.0330 Y103.4520 E4.5594
 G1 X99.2760 Y103.4520 E4.7499
 G1 X103.4520 Y99.2760 E5.0151
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 27, Z = 5.400
 ;fan27;
 G1 Z5.400 F1200
 G1 X103.8000 Y96.6930 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2553 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8875
@@ -2022,13 +2021,13 @@ G1 X102.8170 Y93.5720 E3.0688
 G1 X102.8160 Y95.7330 E3.1464
 G1 X104.7600 Y95.7330 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8160 Y95.7330 F3000 ; custom feedrate
 G1 X102.8170 Y94.1020
 G1 X95.0520 Y87.5850
 G1 Z5.400 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X95.0600 Y87.5920 E0.0004 F1440 ; custom feedrate
 G1 X95.0600 Y86.9140 E0.0247
@@ -2060,12 +2059,12 @@ G1 X86.5480 Y95.0330 E4.7388
 G1 X86.5480 Y99.2760 E4.9293
 G1 X90.7240 Y103.4520 E5.1945
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 28, Z = 5.600
 ;fan28;
 G1 Z5.600 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X89.8510 Y86.2000 E0.7633
@@ -2143,12 +2142,12 @@ G1 X95.0330 Y103.4520 E4.5736
 G1 X99.2760 Y103.4520 E4.7641
 G1 X103.4520 Y99.2760 E5.0292
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 29, Z = 5.800
 ;fan29;
 G1 Z5.800 F1200
 G1 X103.8000 Y96.6890 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2554 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8877
@@ -2203,13 +2202,13 @@ G1 X102.8180 Y93.5670 E3.0689
 G1 X102.8170 Y95.7280 E3.1465
 G1 X104.7600 Y95.7290 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8170 Y95.7280 F3000 ; custom feedrate
 G1 X102.8170 Y94.2190
 G1 X94.6900 Y87.9020
 G1 Z5.800 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X94.3380 Y87.5500 E0.0179 F1440 ; custom feedrate
 G1 X94.3380 Y86.8710 E0.0423
@@ -2240,12 +2239,12 @@ G1 X86.5480 Y95.0330 E4.5848
 G1 X86.5480 Y99.2760 E4.7753
 G1 X90.7240 Y103.4520 E5.0405
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 30, Z = 6.000
 ;fan30;
 G1 Z6.000 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.0730 Y86.2000 E0.7713
@@ -2327,12 +2326,12 @@ G1 X95.0330 Y103.4520 E4.5877
 G1 X99.2760 Y103.4520 E4.7782
 G1 X103.4520 Y99.2760 E5.0434
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 31, Z = 6.200
 ;fan31;
 G1 Z6.200 F1200
 G1 X103.8000 Y96.6840 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2556 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8878
@@ -2387,14 +2386,14 @@ G1 X102.8180 Y93.5630 E3.0689
 G1 X102.8170 Y95.7240 E3.1465
 G1 X104.7600 Y95.7250 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8170 Y95.7240 F3000 ; custom feedrate
 G1 X102.8180 Y93.5630
 G1 X103.4740 Y93.5630
 G1 X99.3340 Y86.6060
 G1 Z6.200 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.4520 Y90.7240 E0.2615 F1800 ; custom feedrate
 G1 X103.4520 Y92.2550 E0.3302
@@ -2412,12 +2411,12 @@ G1 X86.5480 Y95.0330 E4.6008
 G1 X86.5480 Y99.2760 E4.7913
 G1 X90.7240 Y103.4520 E5.0565
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 32, Z = 6.400
 ;fan32;
 G1 Z6.400 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.2950 Y86.2000 E0.7793
@@ -2499,12 +2498,12 @@ G1 X95.0330 Y103.4520 E4.6018
 G1 X99.2760 Y103.4520 E4.7923
 G1 X103.4520 Y99.2760 E5.0575
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 33, Z = 6.600
 ;fan33;
 G1 Z6.600 F1200
 G1 X103.8000 Y96.6800 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2558 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8880
@@ -2555,13 +2554,13 @@ G1 X102.8190 Y93.5590 E3.0689
 G1 X102.8180 Y95.7200 E3.1465
 G1 X104.7600 Y95.7200 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8180 Y95.7200 F3000 ; custom feedrate
 G1 X102.8190 Y94.2090
 G1 X94.5890 Y87.8010
 G1 Z6.600 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X94.3320 Y87.5440 E0.0130 F1800 ; custom feedrate
 G1 X94.3320 Y86.8650 E0.0374
@@ -2590,12 +2589,12 @@ G1 X86.5480 Y95.0330 E4.6045
 G1 X86.5480 Y99.2760 E4.7950
 G1 X90.7240 Y103.4520 E5.0602
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 34, Z = 6.800
 ;fan34;
 G1 Z6.800 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.5170 Y86.2000 E0.7873
@@ -2676,12 +2675,12 @@ G1 X95.0330 Y103.4520 E4.6093
 G1 X99.2760 Y103.4520 E4.7998
 G1 X103.4520 Y99.2760 E5.0650
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 35, Z = 7.000
 ;fan35;
 G1 Z7.000 F1200
 G1 X103.8000 Y96.6760 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2559 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8881
@@ -2732,14 +2731,14 @@ G1 X102.8200 Y93.5540 E3.0689
 G1 X102.8190 Y95.7150 E3.1465
 G1 X104.7600 Y95.7160 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8190 Y95.7150 F3000 ; custom feedrate
 G1 X102.8200 Y93.5540
 G1 X103.4670 Y93.5550
 G1 X99.2760 Y86.5480
 G1 Z7.000 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.4520 Y90.7240 E0.2652 F1800 ; custom feedrate
 G1 X103.4520 Y92.2470 E0.3335
@@ -2757,12 +2756,12 @@ G1 X86.5480 Y95.0330 E4.6045
 G1 X86.5480 Y99.2760 E4.7950
 G1 X90.7240 Y103.4520 E5.0602
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 36, Z = 7.200
 ;fan36;
 G1 Z7.200 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.7390 Y86.2000 E0.7952
@@ -2841,12 +2840,12 @@ G1 X95.0330 Y103.4520 E4.6168
 G1 X99.2760 Y103.4520 E4.8073
 G1 X103.4520 Y99.2760 E5.0725
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 37, Z = 7.400
 ;fan37;
 G1 Z7.400 F1200
 G1 X103.8000 Y96.6710 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2561 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8883
@@ -2893,13 +2892,13 @@ G1 X102.8200 Y93.5500 E3.0690
 G1 X102.8190 Y95.7110 E3.1466
 G1 X104.7600 Y95.7120 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8190 Y95.7110 F3000 ; custom feedrate
 G1 X102.8200 Y94.0790
 G1 X94.7890 Y87.3220
 G1 Z7.400 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X94.3260 Y86.8590 E0.0235 F1800 ; custom feedrate
 G1 X94.3260 Y86.1800 E0.0479
@@ -2928,12 +2927,12 @@ G1 X86.5480 Y95.0330 E4.6045
 G1 X86.5480 Y99.2760 E4.7950
 G1 X90.7240 Y103.4520 E5.0602
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 38, Z = 7.600
 ;fan38;
 G1 Z7.600 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.9610 Y86.2000 E0.8032
@@ -3010,12 +3009,12 @@ G1 X95.0330 Y103.4520 E4.6243
 G1 X99.2760 Y103.4520 E4.8148
 G1 X103.4520 Y99.2760 E5.0800
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 39, Z = 7.800
 ;fan39;
 G1 Z7.800 F1200
 G1 X103.8000 Y96.6670 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2562 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8884
@@ -3062,14 +3061,14 @@ G1 X102.8210 Y93.5460 E3.0690
 G1 X102.8200 Y95.7070 E3.1466
 G1 X104.7600 Y95.7070 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8200 Y95.7070 F3000 ; custom feedrate
 G1 X102.8210 Y93.5460
 G1 X103.4660 Y93.5460
 G1 X99.2760 Y86.5480
 G1 Z7.800 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.4520 Y90.7240 E0.2652 F1800 ; custom feedrate
 G1 X103.4520 Y92.2380 E0.3332
@@ -3087,12 +3086,12 @@ G1 X86.5480 Y95.0330 E4.6045
 G1 X86.5480 Y99.2760 E4.7950
 G1 X90.7240 Y103.4520 E5.0602
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 40, Z = 8.000
 ;fan40;
 G1 Z8.000 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X91.1830 Y86.2000 E0.8112
@@ -3159,12 +3158,12 @@ G1 X95.0330 Y103.4520 E4.6248
 G1 X99.2760 Y103.4520 E4.8153
 G1 X103.4520 Y99.2760 E5.0805
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 41, Z = 8.200
 ;fan41;
 G1 Z8.200 F1200
 G1 X103.8000 Y96.6630 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2564 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8886
@@ -3211,14 +3210,14 @@ G1 X102.8210 Y93.5410 E3.0690
 G1 X102.8200 Y95.7020 E3.1466
 G1 X104.7600 Y95.7030 E3.2163
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8200 Y95.7020 F3000 ; custom feedrate
 G1 X102.8210 Y93.5410
 G1 X103.4650 Y93.5420
 G1 X99.2760 Y86.5480
 G1 Z8.200 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.4520 Y90.7240 E0.2652 F1800 ; custom feedrate
 G1 X103.4520 Y92.2340 E0.3330
@@ -3239,12 +3238,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 42, Z = 8.400
 ;fan42;
 G1 Z8.400 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X91.4050 Y86.2000 E0.8192
@@ -3307,12 +3306,12 @@ G1 X95.0330 Y103.4520 E4.6182
 G1 X99.2760 Y103.4520 E4.8087
 G1 X103.4520 Y99.2760 E5.0739
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 43, Z = 8.600
 ;fan43;
 G1 Z8.600 F1200
 G1 X103.8000 Y96.6580 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2565 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8887
@@ -3361,14 +3360,14 @@ G1 X102.8220 Y93.5370 E2.9328
 G1 X102.8210 Y95.6980 E3.0104
 G1 X104.7600 Y95.6990 E3.0801
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8210 Y95.6980 F3000 ; custom feedrate
 G1 X102.8220 Y93.5370
 G1 X103.4650 Y93.5370
 G1 X99.2760 Y86.5480
 G1 Z8.600 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.4520 Y90.7240 E0.2652 F1800 ; custom feedrate
 G1 X103.4520 Y92.2290 E0.3328
@@ -3392,12 +3391,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 44, Z = 8.800
 ;fan44;
 G1 Z8.800 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X91.6270 Y86.2000 E0.8272
@@ -3460,12 +3459,12 @@ G1 X95.0330 Y103.4520 E4.6116
 G1 X99.2760 Y103.4520 E4.8021
 G1 X103.4520 Y99.2760 E5.0673
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 45, Z = 9.000
 ;fan45;
 G1 Z9.000 F1200
 G1 X103.8000 Y96.6540 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2567 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8889
@@ -3508,14 +3507,14 @@ G1 X102.8230 Y93.5330 E2.9328
 G1 X102.8220 Y95.6940 E3.0104
 G1 X104.7600 Y95.6940 E3.0800
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8220 Y95.6940 F3000 ; custom feedrate
 G1 X102.8230 Y93.5330
 G1 X103.4640 Y93.5330
 G1 X99.2760 Y86.5480
 G1 Z9.000 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.4520 Y90.7240 E0.2652 F1800 ; custom feedrate
 G1 X103.4520 Y92.2250 E0.3326
@@ -3536,12 +3535,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 46, Z = 9.200
 ;fan46;
 G1 Z9.200 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X91.8490 Y86.2000 E0.8351
@@ -3607,12 +3606,12 @@ G1 X95.0330 Y103.4520 E4.6051
 G1 X99.2760 Y103.4520 E4.7956
 G1 X103.4520 Y99.2760 E5.0607
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 47, Z = 9.400
 ;fan47;
 G1 Z9.400 F1200
 G1 X103.8000 Y96.6890 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2554 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8876
@@ -3655,14 +3654,14 @@ G1 X102.8230 Y93.4790 E2.9295
 G1 X102.8220 Y95.7280 E3.0103
 G1 X104.7600 Y95.7300 E3.0799
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8220 Y95.7280 F3000 ; custom feedrate
 G1 X102.8230 Y93.4790
 G1 X103.4150 Y93.4780
 G1 X99.2760 Y86.5480
 G1 Z9.400 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.4520 Y90.7240 E0.2652 F1800 ; custom feedrate
 G1 X103.4520 Y92.1700 E0.3301
@@ -3683,12 +3682,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 48, Z = 9.600
 ;fan48;
 G1 Z9.600 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X92.0710 Y86.2000 E0.8431
@@ -3748,12 +3747,12 @@ G1 X95.0330 Y103.4520 E4.6019
 G1 X99.2760 Y103.4520 E4.7924
 G1 X103.4520 Y99.2760 E5.0576
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 49, Z = 9.800
 ;fan49;
 G1 Z9.800 F1200
 G1 X103.8000 Y96.9160 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2473 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8795
@@ -3796,14 +3795,14 @@ G1 X102.8240 Y93.2390 E2.9128
 G1 X102.8230 Y95.9540 E3.0103
 G1 X104.7600 Y95.9570 E3.0799
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8230 Y95.9540 F3000 ; custom feedrate
 G1 X102.8240 Y93.2390
 G1 X103.1760 Y93.2390
 G1 X99.2760 Y86.5480
 G1 Z9.800 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.4520 Y90.7240 E0.2652 F1800 ; custom feedrate
 G1 X103.4520 Y91.9310 E0.3194
@@ -3824,12 +3823,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 50, Z = 10.000
 ;fan50;
 G1 Z10.000 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X92.2930 Y86.2000 E0.8511
@@ -3889,12 +3888,12 @@ G1 X95.0330 Y103.4520 E4.6019
 G1 X99.2760 Y103.4520 E4.7924
 G1 X103.4520 Y99.2760 E5.0576
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 51, Z = 10.200
 ;fan51;
 G1 Z10.200 F1200
 G1 X103.8000 Y97.1420 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2391 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8714
@@ -3937,13 +3936,13 @@ G1 X102.8250 Y93.0000 E2.8962
 G1 X102.8230 Y96.1810 E3.0104
 G1 X104.7600 Y96.1840 E3.0800
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8230 Y96.1810 F3000 ; custom feedrate
 G1 X102.8240 Y94.0210
 G1 X96.8470 Y87.3430
 G1 Z10.200 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X96.8780 Y87.3740 E0.0016 F1440 ; custom feedrate
 G1 X96.8780 Y86.6950 E0.0260
@@ -3973,12 +3972,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 52, Z = 10.400
 ;fan52;
 G1 Z10.400 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X92.2540 Y86.2000 E0.8497
@@ -4046,12 +4045,12 @@ G1 X95.0330 Y103.4520 E4.6082
 G1 X99.2760 Y103.4520 E4.7987
 G1 X103.4520 Y99.2760 E5.0639
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 53, Z = 10.600
 ;fan53;
 G1 Z10.600 F1200
 G1 X103.8000 Y97.3690 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2310 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8632
@@ -4094,13 +4093,13 @@ G1 X102.8250 Y92.7610 E2.8794
 G1 X102.8240 Y96.4080 E3.0104
 G1 X104.7600 Y96.4100 E3.0800
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8240 Y96.4080 F3000 ; custom feedrate
 G1 X102.8250 Y94.1830
 G1 X97.1020 Y87.5990
 G1 Z10.600 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X97.1340 Y87.6300 E0.0016 F1440 ; custom feedrate
 G1 X97.1330 Y86.9510 E0.0260
@@ -4130,12 +4129,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 54, Z = 10.800
 ;fan54;
 G1 Z10.800 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X92.0290 Y86.2000 E0.8416
@@ -4210,12 +4209,12 @@ G1 X95.0330 Y103.4520 E4.6150
 G1 X99.2760 Y103.4520 E4.8055
 G1 X103.4520 Y99.2760 E5.0707
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 55, Z = 11.000
 ;fan55;
 G1 Z11.000 F1200
 G1 X103.8000 Y97.5960 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2229 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8551
@@ -4261,14 +4260,14 @@ G1 X102.8250 Y94.6760 E2.9401
 G1 X102.8240 Y96.6340 E3.0104
 G1 X104.7600 Y96.6370 E3.0800
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8240 Y96.6340 F3000 ; custom feedrate
 G1 X102.8250 Y94.6760
 G1 X102.8250 Y94.3400
 G1 X97.3900 Y87.8860
 G1 Z11.000 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X97.3580 Y87.8550 E0.0016 F1440 ; custom feedrate
 G1 X97.3580 Y87.1760 E0.0260
@@ -4300,12 +4299,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 56, Z = 11.200
 ;fan56;
 G1 Z11.200 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X91.8040 Y86.2000 E0.8335
@@ -4382,12 +4381,12 @@ G1 X95.0330 Y103.4520 E4.6218
 G1 X99.2760 Y103.4520 E4.8123
 G1 X103.4520 Y99.2760 E5.0775
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 57, Z = 11.400
 ;fan57;
 G1 Z11.400 F1200
 G1 X103.8000 Y97.8220 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2147 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8469
@@ -4436,7 +4435,7 @@ G1 X102.8260 Y94.7110 E3.0723
 G1 X102.8250 Y96.8610 E3.1495
 G1 X104.7600 Y96.8640 E3.2190
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8250 Y96.8610 F3000 ; custom feedrate
 G1 X102.8260 Y94.7110
@@ -4446,7 +4445,7 @@ G1 X102.8260 Y94.4420
 G1 X102.8260 Y94.3110
 G1 X97.6140 Y87.4310
 G1 Z11.400 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X97.6450 Y87.4630 E0.0016 F1440 ; custom feedrate
 G1 X97.6450 Y86.7840 E0.0260
@@ -4475,12 +4474,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 58, Z = 11.600
 ;fan58;
 G1 Z11.600 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X91.5790 Y86.2000 E0.8254
@@ -4557,12 +4556,12 @@ G1 X95.0330 Y103.4520 E4.6286
 G1 X99.2760 Y103.4520 E4.8191
 G1 X103.4520 Y99.2760 E5.0843
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 59, Z = 11.800
 ;fan59;
 G1 Z11.800 F1200
 G1 X103.8000 Y98.0490 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.2066 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8388
@@ -4611,14 +4610,14 @@ G1 X102.8260 Y94.9330 E3.0721
 G1 X102.8250 Y97.0880 E3.1494
 G1 X104.7600 Y97.0900 E3.2189
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8250 Y97.0880 F3000 ; custom feedrate
 G1 X102.8260 Y94.9330
 G1 X104.1280 Y94.9350
 G1 X103.9990 Y94.4960
 G1 Z11.800 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X104.1500 Y94.6470 E0.0077 F1800 ; custom feedrate
 G1 X103.4710 Y94.6460 E0.0321
@@ -4654,12 +4653,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 60, Z = 12.000
 ;fan60;
 G1 Z12.000 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X91.3550 Y86.2000 E0.8174
@@ -4755,12 +4754,12 @@ G1 X95.0330 Y103.4520 E4.6355
 G1 X99.2760 Y103.4520 E4.8260
 G1 X103.4520 Y99.2760 E5.0911
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 61, Z = 12.200
 ;fan61;
 G1 Z12.200 F1200
 G1 X103.8000 Y98.2760 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.1984 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8307
@@ -4813,14 +4812,14 @@ G1 X102.8270 Y95.1550 E3.2082
 G1 X102.8260 Y97.3140 E3.2857
 G1 X104.7600 Y97.3170 E3.3552
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8260 Y97.3140 F3000 ; custom feedrate
 G1 X102.8270 Y95.1550
 G1 X104.5370 Y95.1580
 G1 X104.4440 Y94.2620
 G1 Z12.200 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X104.4720 Y94.2900 E0.0014 F1800 ; custom feedrate
 G1 X104.4720 Y94.8700 E0.0222
@@ -4858,12 +4857,12 @@ G1 X86.5480 Y95.0330 E1.5291
 G1 X86.5480 Y99.2760 E1.7196
 G1 X90.7240 Y103.4520 E1.9848
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 62, Z = 12.400
 ;fan62;
 G1 Z12.400 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X91.1300 Y86.2000 E0.8093
@@ -4958,12 +4957,12 @@ G1 X95.0330 Y103.4520 E4.6423
 G1 X99.2760 Y103.4520 E4.8328
 G1 X103.4520 Y99.2760 E5.0979
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 63, Z = 12.600
 ;fan63;
 G1 Z12.600 F1200
 G1 X103.8000 Y98.5020 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.1903 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8225
@@ -5019,14 +5018,14 @@ G1 X102.8270 Y95.3780 E3.2080
 G1 X102.8260 Y97.5410 E3.2857
 G1 X104.7600 Y97.5430 E3.3552
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8260 Y97.5410 F3000 ; custom feedrate
 G1 X102.8270 Y95.3780
 G1 X103.7420 Y95.3790
 G1 X103.3330 Y94.5080
 G1 Z12.600 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.4350 Y94.6110 E0.0052 F1800 ; custom feedrate
 G1 X102.7560 Y94.6100 E0.0296
@@ -5067,12 +5066,12 @@ G1 X86.5480 Y95.0330 E4.6160
 G1 X86.5480 Y99.2760 E4.8065
 G1 X90.7240 Y103.4520 E5.0717
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 64, Z = 12.800
 ;fan64;
 G1 Z12.800 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.9050 Y86.2000 E0.8012
@@ -5175,12 +5174,12 @@ G1 X95.0330 Y103.4520 E4.6384
 G1 X99.2760 Y103.4520 E4.8289
 G1 X103.4520 Y99.2760 E5.0941
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 65, Z = 13.000
 ;fan65;
 G1 Z13.000 F1200
 G1 X103.8000 Y98.7290 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.1822 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E0.8144
@@ -5240,14 +5239,14 @@ G1 X102.8280 Y95.6000 E3.2078
 G1 X102.8270 Y97.7670 E3.2857
 G1 X104.7600 Y97.7700 E3.3551
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;zhop1
 G1 X102.8270 Y97.7670 F3000 ; custom feedrate
 G1 X102.8280 Y95.6000
 G1 X104.1510 Y95.6020
 G1 X103.7780 Y94.2740
 G1 Z13.000 F1200
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.9920 Y94.4880 E0.0109 F1800 ; custom feedrate
 G1 X103.9920 Y94.8340 E0.0233
@@ -5291,12 +5290,12 @@ G1 X86.5480 Y95.0330 E4.6068
 G1 X86.5480 Y99.2760 E4.7973
 G1 X90.7240 Y103.4520 E5.0624
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 66, Z = 13.200
 ;fan66;
 G1 Z13.200 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.6800 Y86.2000 E0.7931
@@ -5403,12 +5402,12 @@ G1 X90.3310 Y88.4470 E4.7754
 G1 X90.3310 Y86.9410 E4.8430
 G1 X86.5480 Y90.7240 E5.0833
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 67, Z = 13.400
 ;fan67;
 G1 Z13.400 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X90.5670 Y86.2000 E0.1569 F1440 ; custom feedrate
 G1 X90.5660 Y88.0990 E0.2251
@@ -5510,12 +5509,12 @@ G1 X86.5480 Y95.0330 E4.5832
 G1 X86.5480 Y99.2760 E4.7737
 G1 X90.7240 Y103.4520 E5.0389
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 68, Z = 13.600
 ;fan68;
 G1 Z13.600 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.4550 Y86.2000 E0.7850
@@ -5623,12 +5622,12 @@ G1 X90.1060 Y88.4480 E4.9502
 G1 X90.1060 Y87.1660 E5.0077
 G1 X86.5480 Y90.7240 E5.2337
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 69, Z = 13.800
 ;fan69;
 G1 Z13.800 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X90.3420 Y86.2000 E0.1488 F1440 ; custom feedrate
 G1 X90.3420 Y88.1000 E0.2170
@@ -5733,12 +5732,12 @@ G1 X86.5480 Y95.0330 E4.5517
 G1 X86.5480 Y99.2760 E4.7422
 G1 X90.7240 Y103.4520 E5.0074
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 70, Z = 14.000
 ;fan70;
 G1 Z14.000 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.2300 Y86.2000 E0.7770
@@ -5845,12 +5844,12 @@ G1 X89.8810 Y88.4480 E4.9459
 G1 X89.8810 Y87.3910 E4.9934
 G1 X86.5480 Y90.7240 E5.2050
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 71, Z = 14.200
 ;fan71;
 G1 Z14.200 F1200
 G1 X90.1170 Y88.1000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X94.1720 Y88.1000 E0.1457 F1440 ; custom feedrate
 G1 X94.1730 Y86.2000 E0.2139
@@ -5952,12 +5951,12 @@ G1 X86.5480 Y95.0330 E4.6908
 G1 X86.5480 Y99.2760 E4.8813
 G1 X90.7240 Y103.4520 E5.1465
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 72, Z = 14.400
 ;fan72;
 G1 Z14.400 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X90.0050 Y86.2000 E0.7689
@@ -6053,12 +6052,12 @@ G1 X89.6560 Y88.4480 E4.9406
 G1 X89.6560 Y87.6160 E4.9780
 G1 X86.5480 Y90.7240 E5.1754
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 73, Z = 14.600
 ;fan73;
 G1 Z14.600 F1200
 G1 X89.8920 Y88.1000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X93.9460 Y88.1000 E0.1456 F1440 ; custom feedrate
 G1 X93.9470 Y86.2000 E0.2139
@@ -6152,12 +6151,12 @@ G1 X86.5480 Y95.0330 E4.6594
 G1 X86.5480 Y99.2760 E4.8499
 G1 X90.7240 Y103.4520 E5.1151
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 74, Z = 14.800
 ;fan74;
 G1 Z14.800 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X89.7800 Y86.2000 E0.7608
@@ -6253,12 +6252,12 @@ G1 X89.4310 Y88.4490 E4.9305
 G1 X89.4310 Y87.8410 E4.9578
 G1 X86.5480 Y90.7240 E5.1408
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 75, Z = 15.000
 ;fan75;
 G1 Z15.000 F1200
 G1 X89.6670 Y88.1010 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X93.7200 Y88.1010 E0.1456 F1440 ; custom feedrate
 G1 X93.7210 Y86.2000 E0.2139
@@ -6359,12 +6358,12 @@ G1 X86.5480 Y95.0330 E4.6227
 G1 X86.5480 Y99.2760 E4.8132
 G1 X90.7240 Y103.4520 E5.0783
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 76, Z = 15.200
 ;fan76;
 G1 Z15.200 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X89.5550 Y86.2000 E0.7527
@@ -6463,12 +6462,12 @@ G1 X89.2060 Y88.4490 E4.9203
 G1 X89.2060 Y88.0660 E4.9375
 G1 X86.5480 Y90.7240 E5.1063
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 77, Z = 15.400
 ;fan77;
 G1 Z15.400 F1200
 G1 X89.4420 Y88.1010 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X93.4940 Y88.1010 E0.1456 F1440 ; custom feedrate
 G1 X93.4950 Y86.2000 E0.2139
@@ -6557,12 +6556,12 @@ G1 X86.5480 Y95.0330 E4.6308
 G1 X86.5480 Y99.2760 E4.8213
 G1 X90.7240 Y103.4520 E5.0865
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 78, Z = 15.600
 ;fan78;
 G1 Z15.600 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X89.3300 Y86.2000 E0.7446
@@ -6655,12 +6654,12 @@ G1 X95.0330 Y103.4520 E4.6971
 G1 X99.2760 Y103.4520 E4.8876
 G1 X102.1800 Y100.5480 E5.0720
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 79, Z = 15.800
 ;fan79;
 G1 Z15.800 F1200
 G1 X101.8700 Y100.3130 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y100.3150 E0.0693 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E0.1945
@@ -6749,12 +6748,12 @@ G1 X86.5480 Y95.0330 E4.6080
 G1 X86.5480 Y99.2760 E4.7985
 G1 X90.7240 Y103.4520 E5.0636
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 80, Z = 16.000
 ;fan80;
 G1 Z16.000 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X89.1050 Y86.2000 E0.7366
@@ -6846,12 +6845,12 @@ G1 X95.0330 Y103.4520 E4.6874
 G1 X99.2760 Y103.4520 E4.8779
 G1 X101.9540 Y100.7740 E5.0480
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 81, Z = 16.200
 ;fan81;
 G1 Z16.200 F1200
 G1 X103.8000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y86.2000 E1.2644
@@ -6970,12 +6969,12 @@ G1 X86.5480 Y95.0330 E4.6031
 G1 X86.5480 Y99.2760 E4.7936
 G1 X90.7240 Y103.4520 E5.0588
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 82, Z = 16.400
 ;fan82;
 G1 Z16.400 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -7092,12 +7091,12 @@ G1 X93.0650 Y88.4500 E4.7160
 G1 X88.8230 Y88.4500 E4.9065
 G1 X86.5480 Y90.7240 E5.0509
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 83, Z = 16.600
 ;fan83;
 G1 Z16.600 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -7207,12 +7206,12 @@ G1 X101.5260 Y93.0400 E4.8038
 G1 X101.5280 Y88.8000 E4.9942
 G1 X100.6140 Y87.8860 E5.0522
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 84, Z = 16.800
 ;fan84;
 G1 Z16.800 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -7246,12 +7245,12 @@ G1 X94.9670 Y86.5480 E4.9682
 G1 X90.7240 Y86.5480 E5.1587
 G1 X86.5480 Y90.7240 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 85, Z = 17.000
 ;fan85;
 G1 Z17.000 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -7285,12 +7284,12 @@ G1 X86.5480 Y95.0330 E4.9682
 G1 X86.5480 Y99.2760 E5.1587
 G1 X90.7240 Y103.4520 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 86, Z = 17.200
 ;fan86;
 G1 Z17.200 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -7324,12 +7323,12 @@ G1 X95.0330 Y103.4520 E4.9682
 G1 X99.2760 Y103.4520 E5.1587
 G1 X103.4520 Y99.2760 E5.4239
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 87, Z = 17.400
 ;fan87;
 G1 Z17.400 F1200
 G1 X103.8000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y86.2000 E1.2644
@@ -7458,12 +7457,12 @@ G1 X100.6600 Y92.0680 E4.5782
 G1 X100.6600 Y87.9320 E4.7639
 G1 X103.4520 Y90.7240 E4.9412
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 88, Z = 17.600
 ;fan88;
 G1 Z17.600 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -7623,12 +7622,12 @@ G1 X94.0560 Y87.4590 E4.4683
 G1 X89.8130 Y87.4590 E4.6588
 G1 X90.7240 Y86.5480 E4.7167
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 89, Z = 17.800
 ;fan89;
 G1 Z17.800 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -7757,12 +7756,12 @@ G1 X95.9440 Y87.4590 E4.6928
 G1 X100.1870 Y87.4590 E4.8833
 G1 X99.2760 Y86.5480 E4.9412
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 90, Z = 18.000
 ;fan90;
 G1 Z18.000 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -7922,12 +7921,12 @@ G1 X94.0560 Y87.4590 E4.4683
 G1 X89.8130 Y87.4590 E4.6588
 G1 X90.7240 Y86.5480 E4.7167
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 91, Z = 18.200
 ;fan91;
 G1 Z18.200 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -8016,12 +8015,12 @@ G1 X100.6600 Y92.0680 E4.5782
 G1 X100.6600 Y87.9320 E4.7639
 G1 X103.4520 Y90.7240 E4.9412
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 92, Z = 18.400
 ;fan92;
 G1 Z18.400 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -8111,12 +8110,12 @@ G1 X89.7740 Y89.7990 E4.4085
 G1 X89.7740 Y87.4980 E4.5118
 G1 X86.5480 Y90.7240 E4.7167
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 93, Z = 18.600
 ;fan93;
 G1 Z18.600 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -8205,12 +8204,12 @@ G1 X100.6600 Y92.0680 E4.5782
 G1 X100.6600 Y87.9320 E4.7639
 G1 X103.4520 Y90.7240 E4.9412
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 94, Z = 18.800
 ;fan94;
 G1 Z18.800 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -8300,12 +8299,12 @@ G1 X89.7740 Y89.7990 E4.4085
 G1 X89.7740 Y87.4980 E4.5118
 G1 X86.5480 Y90.7240 E4.7167
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 95, Z = 19.000
 ;fan95;
 G1 Z19.000 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -8394,12 +8393,12 @@ G1 X100.6600 Y92.0680 E4.5782
 G1 X100.6600 Y87.9320 E4.7639
 G1 X103.4520 Y90.7240 E4.9412
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 96, Z = 19.200
 ;fan96;
 G1 Z19.200 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -8489,12 +8488,12 @@ G1 X89.7740 Y89.7990 E4.4085
 G1 X89.7740 Y87.4980 E4.5118
 G1 X86.5480 Y90.7240 E4.7167
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 97, Z = 19.400
 ;fan97;
 G1 Z19.400 F1200
 G1 X86.2000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y103.8000 E1.2644
@@ -8732,12 +8731,12 @@ G1 X103.5120 Y87.2200 E8.3545
 G1 X103.5120 Y86.5410 E8.3789
 G1 X103.4590 Y86.4880 E8.3816
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 98, Z = 19.600
 ;fan98;
 G1 Z19.600 F1200
 G1 X103.8000 Y86.2000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X103.8000 Y103.8000 E0.6322 F1440 ; custom feedrate
 G1 X86.2000 Y103.8000 E1.2644
@@ -9011,12 +9010,12 @@ G1 X93.3410 Y96.6590 E0.2669
 G1 X93.1120 Y96.2100 E0.2850
 G1 X91.0040 Y98.3170 E0.3921
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 99, Z = 19.800
 ;fan99;
 G1 Z19.800 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -9254,12 +9253,12 @@ G1 X86.4880 Y102.7800 E8.3545
 G1 X86.4880 Y103.4590 E8.3789
 G1 X86.5410 Y103.5120 E8.3816
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 ;layer 100, Z = 20.000
 ;fan100;
 G1 Z20.000 F1200
 G1 X86.2000 Y103.8000 F3000 ; custom feedrate
-G1 E0 F3000 ; custom un-retraction/prime
+G1 E0 F2400 ; custom un-retraction/prime
 G92 E0.0000
 G1 X86.2000 Y86.2000 E0.6322 F1440 ; custom feedrate
 G1 X103.8000 Y86.2000 E1.2644
@@ -9531,7 +9530,7 @@ G1 X97.3140 Y92.0080 E2.9253
 G1 X96.6350 Y92.0080 E2.9497
 G1 X96.2460 Y92.3970 E2.9695
 G92 E0.0000
-G1 E-5 F3000 ; custom retraction
+G1 E-0.5 F2400 ; custom retraction
 
 G28 X35.0000 ; home X axis
 M106 S0 ; turn off cooling fan
